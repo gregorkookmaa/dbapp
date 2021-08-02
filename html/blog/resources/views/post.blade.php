@@ -9,8 +9,7 @@
                 {{$post->content}}
             </div>
             <div class="card-footer text-muted">
-                <p>Posted By: {{\App\Models\User::find($post->user_id )->name}}</p>
-                {{$post->created_at->diffForHumans()}}
+                <p>Posted By - {{\App\Models\User::find($post->user_id )->name}} ({{$post->created_at->diffForHumans()}})</p>
             </div>
         </div>
         @foreach ($post->comments as $comment)
